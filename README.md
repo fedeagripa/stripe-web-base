@@ -1,11 +1,4 @@
-# React Redux Base
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/e334cf37c246c64bf052/maintainability)](https://codeclimate.com/github/rootstrap/react-redux-base/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/e334cf37c246c64bf052/test_coverage)](https://codeclimate.com/github/rootstrap/react-redux-base/test_coverage)
-[![CircleCI](https://circleci.com/gh/rootstrap/react-redux-base.svg?style=shield)](https://circleci.com/gh/rootstrap/react-redux-base)
-[![Dependency Status](https://img.shields.io/david/rootstrap/react-redux-base.svg)](https://david-dm.org/rootstrap/react-redux-base)
-[![License](https://img.shields.io/github/license/rootstrap/react-redux-base.svg)](https://github.com/rootstrap/react-redux-base/blob/master/LICENSE.md)
-
+# React Stripe base
 
 ## Commands
 1. **Run the app**. `yarn start` or `npm start`
@@ -68,34 +61,3 @@ The server is prepared to fetch data directly from the backend before rendering 
 1. **Add all the environment variables in .env to Heroku**
 2. **Add the env variable NPM_CONFIG_PRODUCTION=false to Heroku**
 2. **Deploy your branch to Heroku**
-
-## Technologies
-
-| **Tech** | **Description**
-|----------|-------
-|  [React](https://facebook.github.io/react/)  |   Fast, composable client-side components.|
-|  [Redux](http://redux.js.org) |  Enforces unidirectional data flows and immutable, hot reloadable store. Supports time-travel debugging.|
-|  [React Router 5](https://github.com/reactjs/react-router) | A complete routing library for React |
-|  [Babel](http://babeljs.io) |  Compiles ES6 to ES5. Enjoy the new version of JavaScript today.|
-| [Webpack 4](http://webpack.github.io) | Bundles npm packages and our JS into a single file. Includes hot reloading via [React Hot Loader](https://github.com/gaearon/react-hot-loader). |
-| [Express](https://github.com/expressjs/express) | Fast, unopinionated, minimalist web framework for node. |
-| [Cypress](https://cypress.io/) | Automated integration tests. Default way of testing. |
-| [Jest](https://facebook.github.io/jest/) | Automated tests with built-in expect assertions and  [Enzyme](https://github.com/airbnb/enzyme) for DOM testing without a browser using Node. |
-| [ESLint](http://eslint.org/)| Lint JS. Reports syntax and style issues. Using [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb) for the airbnb style guides. |
-| [SASS](http://sass-lang.com/) | Compiled CSS styles with variables, functions, and more.
-| [PostCSS](https://github.com/postcss/postcss) | Transform styles with JS plugins. Used to autoprefix CSS |
-| [Stylelint](https://github.com/stylelint/stylelint) | Modern CSS linter that helps you enforce consistent conventions and avoid errors in your stylesheets. |
-| [Redux Persist](https://github.com/rt2zz/redux-persist) | Persist and rehydrate your redux store |
-| [Immer](https://github.com/immerjs/immer) | Allows you to work with immutable state in a more convenient way. |
-| [React Intl](https://github.com/yahoo/react-intl/) | Localization for language support. |
-| [Rootstrap UI](https://github.com/rootstrap/rootstrap-ui/) | Rootstrap UI is the components & styles library to build user interfaces |
-
-## License
-
-React Redux Base is available under the MIT license. See the LICENSE file for more info.
-
-## Credits
-
-**React Redux Base** is maintained by [Rootstrap](http://www.rootstrap.com) with the help of our [contributors](https://github.com/rootstrap/react-redux-base/contributors).
-
-[<img src="https://s3-us-west-1.amazonaws.com/rootstrap.com/img/rs.png" width="100"/>](http://www.rootstrap.com)

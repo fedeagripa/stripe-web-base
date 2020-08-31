@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { ReactComponent as Logo } from 'assets/logo.svg';
+import logo from 'assets/stripe-logo-blue.png';
 
 const Header = () => (
   <header className="header">
-    <Logo className="header__logo" />
+    <img src={logo} alt="logo" />
   </header>
 );
 

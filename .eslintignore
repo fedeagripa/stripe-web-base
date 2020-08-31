@@ -5,3 +5,4 @@ src/webpack-public-path.js
 server/build
 cypress/fixtures/*.js
 cypress/fixtures/**/*.js
+src/components/common/StripeField.js

@@ -31,3 +31,18 @@ validate.validators.presence.options = { allowEmpty: false };
 
 export const validations = (constraints, props = {}) => data =>
   validate(data, constraints, props) || {};
+
+export const billing = {
+  firstName: {
+    presence: true
+  },
+  lastName: {
+    presence: true
+  },
+  zipcode: {
+    presence: false
+  },
+  country: {
+    presence: false
+  }
+};

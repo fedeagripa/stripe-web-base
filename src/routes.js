@@ -5,6 +5,7 @@ import HomePage from 'pages/HomePage';
 import LoginPage from 'pages/LoginPage';
 import SignUpPage from 'pages/SignUpPage';
 import NotFoundPage from 'pages/NotFoundPage';
+import BillingPage from 'pages/BillingPage';
 
 const routes = [
   {
@@ -23,6 +24,12 @@ const routes = [
   },
   {
     component: <NotFoundPage />
+  },
+  {
+    path: routesPaths.billing,
+    component: <BillingPage />,
+    exact: true,
+    private: true
   }
 ];
 

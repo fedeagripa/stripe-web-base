@@ -5,6 +5,7 @@ import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 
 import { statusReducer } from '@rootstrap/redux-tools';
 import session from './sessionReducer';
+import payments from './billingReducer';
 
 const sessionPersistConfig = {
   key: 'session',
@@ -16,7 +17,8 @@ const sessionPersistConfig = {
 const rootReducer = () =>
   combineReducers({
     session: persistReducer(sessionPersistConfig, session),
-    actionStatus: statusReducer
+    actionStatus: statusReducer,
+    payments
   });
 
 export default rootReducer;

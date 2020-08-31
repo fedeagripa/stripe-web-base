@@ -16,7 +16,7 @@ const LoginPage = () => {
   }
 
   return (
-    <div>
+    <div className="login-page">
       <p>
         <FormattedMessage id="login.title" />
       </p>
