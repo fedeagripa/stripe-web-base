@@ -63,7 +63,6 @@ export const createCard = createThunk('CREATE_CARD', async ({ token, isUpdate })
       brand,
       last4
     };
-    debugger;
     if (isUpdate) {
       await billingService.updateBilling({ token: tokenToSend, newCard: tokenToSave });
     } else {
