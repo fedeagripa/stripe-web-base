@@ -33,5 +33,5 @@ export default {
   'form.email': 'Email',
   'form.email.placeholder': 'email@example.com',
 
-  createPaymentMethod: 'createPaymentMethod'
+  createPaymentMethod: 'ADD CARD'
 };

@@ -23,7 +23,7 @@ const BillingForm = ({ stripe, elements }) => {
   return (
     <div className="new-card-form">
       <div className="new-card-form-section">
-        <h4 className="new-card-form-section-title h4-medium">Credit Card Info</h4>
+        <h4 className="new-card-form-section-title h4-medium">Billing</h4>
         <div className="new-card-form-row">
           <div className="half-row">
             <Field
@@ -51,10 +51,11 @@ const BillingForm = ({ stripe, elements }) => {
         </div>
       </div>
       <div className="new-card-form-section">
-        <h4 className="new-card-form-section-title h4-medium">Billing Info</h4>
+        <h4 className="new-card-form-section-title h4-medium">Billing Info (coming soon)</h4>
       </div>
       <div className="submit-container">
         <Button
+          className="btn"
           onClick={() => onSubmit({})}
           labelId="createPaymentMethod"
           type="primary"
