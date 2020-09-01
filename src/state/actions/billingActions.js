@@ -17,8 +17,8 @@ export const getBilling = createThunk('GET_BILLING', async () => {
 
 export const getDonations = createThunk('GET_DONATIONS', async () => {
   try {
-    const { data } = await paymentService.getDonations();
-    return data.payments;
+    const { data } = await paymentService.getPayments();
+    return data;
   } catch ({ response: { data } }) {
     throw parseError(data);
   }
@@ -63,6 +63,7 @@ export const createCard = createThunk('CREATE_CARD', async ({ token, isUpdate })
       brand,
       last4
     };
+    debugger;
     if (isUpdate) {
       await billingService.updateBilling({ token: tokenToSend, newCard: tokenToSave });
     } else {
