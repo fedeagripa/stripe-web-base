@@ -1,9 +1,10 @@
 import { createReducer } from '@rootstrap/redux-tools';
-import { getBilling, createCard } from 'state/actions/billingActions';
+import { getBilling, createCard, getDonations } from 'state/actions/billingActions';
 
 const initialState = {
   loading: false,
-  creditCard: {}
+  creditCard: {},
+  payments: {}
 };
 
 const actionHandlers = {
@@ -12,6 +13,9 @@ const actionHandlers = {
   },
   [createCard.success]: (state, { payload }) => {
     state.creditCard = payload;
+  },
+  [getDonations.success]: (state, { payload }) => {
+    state.payments = payload;
   }
 };
 

@@ -1,21 +1,39 @@
 import { SubmissionError } from 'redux-form/immutable';
 import { createThunk } from '@rootstrap/redux-tools';
 import billingService from 'services/billingService';
+import paymentService from 'services/paymentService';
 import parseError from 'utils/parseError';
 
 import { getErrors } from 'utils/helpers';
 
 export const getBilling = createThunk('GET_BILLING', async () => {
   try {
-    const customerId = 1;
-    const { data } = await billingService.getBilling(customerId);
+    const { data } = await billingService.getBilling();
     return data.creditCard;
   } catch ({ response: { data } }) {
     throw parseError(data);
   }
 });
 
-export const createCard = createThunk('CREATE_CARD', async ({ customerId, token, isUpdate }) => {
+export const getDonations = createThunk('GET_DONATIONS', async () => {
+  try {
+    const { data } = await paymentService.getDonations();
+    return data.payments;
+  } catch ({ response: { data } }) {
+    throw parseError(data);
+  }
+});
+
+export const donate = createThunk('DONATE', async amount => {
+  try {
+    const { data } = await paymentService.donate(amount);
+    return data.payment;
+  } catch ({ response: { data } }) {
+    throw parseError(data);
+  }
+});
+
+export const createCard = createThunk('CREATE_CARD', async ({ token, isUpdate }) => {
   try {
     const {
       id,
@@ -46,9 +64,9 @@ export const createCard = createThunk('CREATE_CARD', async ({ customerId, token,
       last4
     };
     if (isUpdate) {
-      await billingService.updateBilling(customerId, { token: tokenToSend, newCard: tokenToSave });
+      await billingService.updateBilling({ token: tokenToSend, newCard: tokenToSave });
     } else {
-      await billingService.saveBilling(customerId, { token: tokenToSend });
+      await billingService.saveBilling({ token: tokenToSend });
     }
   } catch ({ errors, error }) {
     throw new SubmissionError(getErrors(error, errors));

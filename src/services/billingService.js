@@ -1,16 +1,16 @@
 import httpClient from 'httpClient';
 
 class BillingService {
-  static getBilling(customerId) {
-    return httpClient.get(`/customer/${customerId}/credit_cards`);
+  static getBilling() {
+    return httpClient.get(`/credit_cards`);
   }
 
-  static updateBilling(customerId, data) {
-    return httpClient.put(`/customer/${customerId}/credit_cards`, data);
+  static updateBilling(data) {
+    return httpClient.put(`/credit_cards`, data);
   }
 
-  static saveBilling(customerId, token) {
-    return httpClient.post(`/customer/${customerId}/credit_cards`, token);
+  static saveBilling(token) {
+    return httpClient.post(`/credit_cards`, token);
   }
 }
 
