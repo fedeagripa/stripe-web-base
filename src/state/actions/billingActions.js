@@ -27,7 +27,7 @@ export const getDonations = createThunk('GET_DONATIONS', async () => {
 export const donate = createThunk('DONATE', async amount => {
   try {
     const { data } = await paymentService.donate(amount);
-    return data.payment;
+    return data;
   } catch ({ response: { data } }) {
     throw parseError(data);
   }
@@ -64,10 +64,14 @@ export const createCard = createThunk('CREATE_CARD', async ({ token, isUpdate })
       last4
     };
     if (isUpdate) {
-      await billingService.updateBilling({ token: tokenToSend, newCard: tokenToSave });
-    } else {
-      await billingService.saveBilling({ token: tokenToSend });
+      const { data } = await billingService.updateBilling({
+        token: tokenToSend,
+        newCard: tokenToSave
+      });
+      return data.creditCard;
     }
+    const { data } = await billingService.saveBilling({ token: tokenToSend });
+    return data.creditCard;
   } catch ({ errors, error }) {
     throw new SubmissionError(getErrors(error, errors));
   }

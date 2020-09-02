@@ -10,11 +10,11 @@ import { getBilling, getDonations, donate } from 'state/actions/billingActions';
 import Button from './common/Button';
 
 const BillingForm = ({ stripe, elements }) => {
+  const payments = useSelector(state => state.payments.payments);
+  const creditCard = useSelector(state => state.payments.creditCard);
   const [cardState, setCardState] = useState({});
   const [expiryState, setExpiryState] = useState({});
   const [CVCState, setCVCState] = useState({});
-  const payments = useSelector(state => state.payments.payments);
-  const creditCard = useSelector(state => state.payments.creditCard);
 
   const dispatch = useDispatch();
 
@@ -77,7 +77,7 @@ const BillingForm = ({ stripe, elements }) => {
       </div>
       <div className="payments">
         <h4> Existing Card </h4>
-        {creditCard.brand} ending in {creditCard.last4}
+        {creditCard && `${creditCard.brand} ending in ${creditCard.last4}`}
         <p> Total payments: {payments.length} </p>
         <h4> Donate </h4>
         <Button onClick={() => makeDonation(1)} labelId="payment1" type="primary" size="small" />

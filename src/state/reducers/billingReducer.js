@@ -1,5 +1,5 @@
 import { createReducer } from '@rootstrap/redux-tools';
-import { getBilling, createCard, getDonations } from 'state/actions/billingActions';
+import { getBilling, createCard, getDonations, donate } from 'state/actions/billingActions';
 
 const initialState = {
   loading: false,
@@ -16,6 +16,9 @@ const actionHandlers = {
   },
   [getDonations.success]: (state, { payload }) => {
     state.payments = payload;
+  },
+  [donate.success]: (state, { payload }) => {
+    state.payments = state.payments.concat(payload);
   }
 };
 
