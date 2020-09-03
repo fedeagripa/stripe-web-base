@@ -35,7 +35,7 @@
   justify-content: center;
 }
 
-.billing-container{
+.billing-container {
   display: flex;
   flex-direction: row;
 }
@@ -48,8 +48,8 @@
   }
 
   &-section {
-    margin: 0px -2.7rem 1rem 1.6rem;
     border: solid grey;
+    margin: 0 -2.7rem 1rem 1.6rem;
   }
 }
 
@@ -76,5 +76,5 @@
   background: lightgrey;
   border: solid dimgrey;
   border-radius: 10px;
-  padding: 0.22rem;
+  padding: .22rem;
 }
