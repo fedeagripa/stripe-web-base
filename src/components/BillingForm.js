@@ -33,11 +33,11 @@ const BillingForm = ({ stripe, elements }) => {
   };
 
   return (
-    <div className="billing-container">
-      <div className="new-card-form">
-        <div className="new-card-form-section">
-          <h4 className="new-card-form-section-title h4-medium">Billing</h4>
-          <div className="new-card-form-row">
+    <div className="row no-gutters">
+      <div className="new-card-form offset-md-1 col-md-4">
+        <div className="card">
+          <h4 className="card-header">Billing</h4>
+          <div className="card-body">
             <div className="half-row">
               <Field
                 onChange={setCardState}
@@ -62,26 +62,50 @@ const BillingForm = ({ stripe, elements }) => {
               />
             </div>
           </div>
-        </div>
-        <div className="new-card-form-section">
-          <h4 className="new-card-form-section-title h4-medium">Billing Info (coming soon)</h4>
-        </div>
-        <div className="submit-container">
           <Button
             onClick={() => onSubmit({})}
             labelId="createPaymentMethod"
             type="primary"
             size="small"
+            className="btn btn-primary"
           />
         </div>
+        <div className="card">
+          <h4 className="card-header">Billing Info (coming soon)</h4>
+        </div>
       </div>
-      <div className="payments">
-        <h4> Existing Card </h4>
-        {creditCard && `${creditCard.brand} ending in ${creditCard.last4}`}
-        <p> Total payments: {payments.length} </p>
-        <h4> Donate </h4>
-        <Button onClick={() => makeDonation(1)} labelId="payment1" type="primary" size="small" />
-        <Button onClick={() => makeDonation(100)} labelId="payment2" type="primary" size="small" />
+      <div className="card offset-md-1 col-sm-4">
+        <div className="card-header">Existing Card</div>
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">
+            {' '}
+            {creditCard && `${creditCard.brand} ending in ${creditCard.last4}`}{' '}
+          </li>
+          <li className="list-group-item"> Total payments: {payments.length} </li>
+          <li className="list-group-item">
+            Donate:
+            <div className="row">
+              <div className="offset-md-6">
+                <Button
+                  onClick={() => makeDonation(1)}
+                  labelId="payment1"
+                  type="primary"
+                  size="small"
+                  className="btn btn-info"
+                />
+              </div>
+              <div className="offset-md-1">
+                <Button
+                  onClick={() => makeDonation(100)}
+                  labelId="payment2"
+                  type="primary"
+                  size="small"
+                  className="btn btn-success"
+                />
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   );

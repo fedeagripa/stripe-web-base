@@ -16,6 +16,7 @@ const HomePage = () => {
           <FormattedMessage id="home.welcome" values={user} />
         </p>
       )}
+      <br />
       <LogoutButton />
     </div>
   );

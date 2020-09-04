@@ -13,6 +13,7 @@ import configureStore from 'state/store/configureStore';
 import App from 'components/App';
 import locales from 'locales';
 import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from 'constants/constants';
+import 'bootstrap/dist/css/bootstrap.css';
 import 'styles/styles.scss';
 
 require('./favicon.ico'); // Tell webpack to load favicon.ico
