@@ -1,4 +1,6 @@
 import React, { useState, useCallback } from 'react';
+// FEEDBACK: FYI this has been deprecated and replaced by react-stripe-js which provides a more
+//   modern hooks-based approach - defines useStripe() / useElements() hooks, etc.
 import { StripeProvider, Elements, injectStripe } from 'react-stripe-elements';
 import { Helmet } from 'react-helmet';
 
